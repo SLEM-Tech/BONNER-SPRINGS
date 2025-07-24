@@ -79,9 +79,9 @@ const RefundPolicy = () => {
           <span className="font-medium">4. How to Request a Refund</span>
           <p className="mt-1">To initiate a refund or return:</p>
           <ul className="list-disc pl-5 mt-1 space-y-1">
-            <li>Email: info@duply.com.ng</li>
+            <li>Email: info@bonny-springs.com.ng</li>
             <li>Phone: 09030954364</li>
-            <li>Returns Page: https://www.duply.com.ng/</li>
+            <li>Returns Page: https://www.bonny-springs.com.ng/</li>
           </ul>
           <p className="mt-1">Include the following in your request:</p>
           <ul className="list-disc pl-5 mt-1 space-y-1">
@@ -158,7 +158,7 @@ const RefundPolicy = () => {
         </p>
         <ul className="list-disc pl-5 mt-2 space-y-1 text-xs md:text-sm xl:text-base">
           <li>Bonner Springs Service Limited</li>
-          <li>Email: info@duply.com.ng</li>
+          <li>Email: info@bonny-springs.com.ng</li>
           <li>Phone: 09030954364</li>
         </ul>
       </div>

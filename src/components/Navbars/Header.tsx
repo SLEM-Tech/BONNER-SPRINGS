@@ -206,7 +206,9 @@ const Header = () => {
     <>
       <header
         className={`flex slg:flex-col w-full justify-center items-center  z-50 transition drop-shadow-md fixed top-0 ${
-          navbar ? "" : " "
+          navbar
+            ? "bg-primaryColor-100/50 backdrop-blur-lg shadow-xl"
+            : "bg-custom-gradient"
         }`}>
         {/* Desktop */}
         <div className="hidden slg:grid grid-cols-4 items-center w-full py-1 max-w-[1200px] z-30 px-5 xl:px-0 ">
@@ -216,7 +218,7 @@ const Header = () => {
             <input
               type="text"
               placeholder="I'm looking for..."
-              className="text-base text-black/70 px-4 w-[300px] xl:w-[400px] py-1 border border-[#ccc] rounded-l-sm outline-none focus:border-primaryColor-100 focus:ring-primaryColor-100 focus:ring-1 transition bg-transparent"
+              className="text-base text-white/70 px-4 w-[300px] xl:w-[400px] py-1 border border-gray-200 rounded-3xl outline-none focus:border-gray-200 focus:ring-primaryColor-100 focus:ring-1 transition bg-transparent"
               value={searchValue}
               onChange={handleInputChange}
               onKeyDown={(event) => {
@@ -229,13 +231,13 @@ const Header = () => {
             {isSearchLoading ? (
               <button
                 type="button"
-                className="px-6 text-primary te font-semibold transition-[.5] rounded-r-sm hover:text-primaryColor-200 focus:outline-none focus:ring focus:border-blue-300 text-xl">
+                className="px-6 text-gray1-400 te font-semibold transition-[.5] rounded-r-sm hover:text-primaryColor-200 focus:outline-none focus:ring focus:border-blue-300 text-xl">
                 <ImSpinner2 className="animate-spin" />
               </button>
             ) : (
               <button
                 type="submit"
-                className="px-6 text-primary te font-semibold transition-[.5] rounded-r-sm hover:text-primaryColor-200 focus:outline-none focus:ring focus:border-blue-300 text-xl"
+                className="px-6 text-gray1-400 font-semibold transition-[.5] rounded-r-sm hover:text-primaryColor-200 focus:outline-none focus:ring focus:border-blue-300 text-xl"
                 onClick={handleSearch}>
                 <FaSearch />
               </button>
@@ -257,10 +259,10 @@ const Header = () => {
                   </span>
                 </div>
               ) : (
-                <UserIconSvg className="w-8 h-8" />
+                <UserIconSvg className="w-8 h-8 fill-gray1-400" />
               )}
 
-              <div className="flex flex-col text-primary font-semibold text-sm">
+              <div className="flex flex-col text-gray1-400 font-semibold text-sm">
                 {firstName ? (
                   <div
                     className="flex gap-1.5 items-center cursor-pointer group relative"
