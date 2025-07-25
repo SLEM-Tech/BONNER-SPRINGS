@@ -144,56 +144,62 @@ const AllCategorySection = () => {
   const services = [service1, service2, service3, service4];
 
   return (
-    <main className="relative">
+    <main className="relative bg-white">
       <>
-        <section className=" relative h-full w-full">
-          <div className="relative flex items-center justify-center h-screen text-white pt-32">
+        {/* Hero Section */}
+        <section className="relative h-full w-full overflow-hidden">
+          <div className="relative flex items-center justify-center min-h-screen text-white pt-20 md:pt-32 pb-10">
             <Picture
               src={homepageBg}
               alt="hero-image"
-              className="h-full md:w-full absolute object-cover w-screen top-0"
+              className="h-full w-full absolute object-cover top-0 left-0"
             />
 
-            <div className="container mx-auto px-6  py-12 flex flex-col md:flex-row  gap-8 items-center h-full z-10 b">
-              <div className="flex-1">
-                <h1 className="text-3xl md:text-7xl font-bold mb-4 text-white">
+            <div className="container mx-auto px-4 sm:px-6 py-12 flex flex-col md:flex-row gap-6 md:gap-8 items-center h-full z-10">
+              <div className="flex-1 text-center md:text-left">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 text-white">
                   Power Up with the
                 </h1>
-                <h2 className="text-3xl md:text-7xl font-bold">
+                <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold">
                   Right Software.
                 </h2>
-                <p className="mt-4 text-lg md:text-2xl text-white font-light">
-                  From creative tools to business essentials, <br />
+                <p className="mt-4 text-lg sm:text-xl md:text-2xl text-white font-light">
+                  From creative tools to business essentials,{" "}
+                  <br className="hidden sm:block" />
                   we&apos;ve got what you need
                 </p>
               </div>
-              <div className="relative w-[350px] h-[500px]">
+
+              {/* Image boxes - hidden on very small screens, adjusted positioning */}
+              <div className="relative left-5 md:left-0 w-[200px] h-[300px] sm:w-[300px] sm:h-[450px] md:w-[350px] md:h-[500px] mt-8 md:mt-0 ">
                 {/* Back Box */}
                 <Picture
                   src={herosectionImg}
                   alt="software-box-back"
-                  className="absolute -top-7 left-[60px] w-[358px] h-[500px] shadow-2xl z-0 "
+                  className="absolute -top-5 left-[30px] sm:left-[50px] w-full h-full shadow-2xl z-0"
                 />
 
                 {/* Front Box */}
                 <Picture
                   src={herosectionImg}
                   alt="software-box-front"
-                  className="absolute top-[50px] -left-32 w-[358px] h-[497px] shadow-2xl z-10 "
+                  className="absolute top-[30px] -left-20 sm:-left-32 w-full h-full shadow-2xl z-10"
                 />
               </div>
             </div>
           </div>
         </section>
-        <section className="flex w-full bg-white mt-6 py-4 px-5 sm:px-8 pb-12 slg:pb-0 slg:mb-20">
-          <div className="container mx-auto px-4 ">
+
+        {/* Services Section */}
+        <section className="flex w-full bg-white py-8 px-4 sm:px-6 md:px-8 pb-12 slg:pb-0 slg:mb-20">
+          <div className="container mx-auto px-2 sm:px-4">
             <div>
-              <h1>Services</h1>
-              <hr className="w-full" />
+              <h1 className="text-2xl md:text-3xl">Services</h1>
+              <hr className="w-full mt-2" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-              {/* Service 1 - Full height on left */}
-              <div className="row-span-1">
+              {/* Service 1 */}
+              <div className="sm:row-span-1 h-[300px] sm:h-auto">
                 <Picture
                   src={services[0]}
                   alt="Service 1"
@@ -201,16 +207,16 @@ const AllCategorySection = () => {
                 />
               </div>
 
-              {/* Services 2 & 3 - Stacked vertically on right */}
+              {/* Services 2 & 3 */}
               <div className="grid grid-rows-2 gap-4">
-                <div>
+                <div className="h-[300px] sm:h-auto">
                   <Picture
                     src={services[1]}
                     alt="Service 2"
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
-                <div>
+                <div className="h-[300px] sm:h-auto">
                   <Picture
                     src={services[2]}
                     alt="Service 3"
@@ -219,8 +225,8 @@ const AllCategorySection = () => {
                 </div>
               </div>
 
-              {/* Service 4 - Full height on bottom right */}
-              <div className="row-span-2">
+              {/* Service 4 */}
+              <div className="sm:row-span-2 h-[300px] sm:h-auto">
                 <Picture
                   src={services[3]}
                   alt="Service 4"
@@ -230,10 +236,12 @@ const AllCategorySection = () => {
             </div>
           </div>
         </section>
-        <section className="bg-primaryColor-500">
-          <div className="mx-auto container flex justify-between items-center mb-4  text-white py-4">
-            <div className="space-y-2">
-              <h1 className="md:text-5xl text-3xl font-medium">
+
+        {/* CTA Section */}
+        <section className="bg-primaryColor-100 py-6 md:py-8">
+          <div className="mx-auto container px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-white">
+            <div className="space-y-2 text-center sm:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium">
                 Explore more packages
               </h1>
               <p className="text-sm md:text-base font-light">
@@ -241,7 +249,7 @@ const AllCategorySection = () => {
                 semper.
               </p>
             </div>
-            <button className="bg-btnColor-100 py-2 px-4 rounded-full text-white">
+            <button className="bg-btnColor-100 py-2 px-6 rounded-full text-white whitespace-nowrap">
               enrol now
             </button>
           </div>

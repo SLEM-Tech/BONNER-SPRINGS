@@ -77,7 +77,9 @@ const DeliveryReturn = () => {
           <li>
             If you have any further queries regarding delivery, kindly contact
             our customer service representative through email to{" "}
-            <span className="font-medium">IgweBlessing@duply.com.ng</span>
+            <span className="font-medium">
+              IgweBlessing@bonner-springs.com.ng
+            </span>
           </li>
         </ul>
       </div>

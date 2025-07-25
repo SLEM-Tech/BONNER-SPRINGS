@@ -1,7 +1,7 @@
-const websiteUrl = "https://www.duply.com.ng/";
+const websiteUrl = "https://www.bonner-springs.com.ng/";
 export const websiteName = "Bonner Springs";
 export const SEODATA = {
-  defaultOGImage: `https://www.duply.com.ng/_next/static/media/duply-logo.6c861d97.png`,
+  defaultOGImage: `https://www.bonner-springs.com.ng/_next/static/media/bonner-springs-logo.6c861d97.png`,
   default: {
     title: websiteName,
     description: `This is ${websiteName}`,
