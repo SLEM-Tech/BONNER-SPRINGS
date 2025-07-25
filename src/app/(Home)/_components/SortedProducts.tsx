@@ -129,7 +129,7 @@ const SortedProducts = () => {
   };
 
   return (
-    <div className="mb-8 lg:mb-16 px-2  ">
+    <div className=" lg:mb-16 px-2 pb-10 ">
       <div className="space-y-5 md:space-y-10 container mx-auto">
         {categories
           ?.filter((category: CategoryType) => category?.count > 0)

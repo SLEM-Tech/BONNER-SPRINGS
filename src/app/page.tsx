@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const page = () => {
   return (
-    <AppLayout className="mx-auto relative bg-transparent">
+    <AppLayout className="mx-auto relative ">
       <AllCategorySection />
       <div className="pt-10 sm:mt-10 bg-white">
         <SortedProducts />
