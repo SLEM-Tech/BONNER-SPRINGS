@@ -475,12 +475,12 @@ const Header = () => {
                   <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white shadow-lg flex justify-center items-center rounded-full">
                     {totalItems}
                   </span>
-                  <CartIconSvg />
+                  <CartIconSvg className="fill-white" />
                 </div>
               )}
             </div>
           </div>
-          <div className="flex w-full h-10 px-1 pb-2">
+          {/* <div className="flex w-full h-10 px-1 pb-2">
             <input
               type="text"
               placeholder="I'm looking for..."
@@ -508,7 +508,7 @@ const Header = () => {
                 <FaSearch />
               </button>
             )}
-          </div>
+          </div> */}
           {drawerVisible && (
             <MobileNav
               closeDrawer={closeDrawer}

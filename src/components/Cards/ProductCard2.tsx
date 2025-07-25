@@ -92,7 +92,7 @@ const ProductCard2 = ({
 
       {/* Product Info */}
       <div className="flex flex-col px-1 gap-2">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between w-full">
           <h4 className="text-xs sm:text-sm text-primary font-medium">
             {NewAmount ? <FormatMoney2 value={NewAmount} /> : "Out of Stock"}
           </h4>

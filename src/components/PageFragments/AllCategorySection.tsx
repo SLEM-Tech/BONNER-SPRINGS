@@ -171,7 +171,7 @@ const AllCategorySection = () => {
               </div>
 
               {/* Image boxes - hidden on very small screens, adjusted positioning */}
-              <div className="relative left-5 md:left-0 w-[250px] h-[350px] sm:w-[300px] sm:h-[450px] md:w-[350px] md:h-[500px] mt-8 md:mt-0 ">
+              <div className="relative left-5 md:left-0 w-[200px] h-[300px] sm:w-[300px] sm:h-[450px] md:w-[350px] md:h-[500px] mt-8 md:mt-0 ">
                 {/* Back Box */}
                 <Picture
                   src={herosectionImg}
