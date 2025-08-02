@@ -10,133 +10,125 @@ import Link from "next/link";
 import { convertToSlug } from "@constants";
 
 interface ProductCard2Props {
-	id: string | number;
-	image: string;
-	oldAmount?: string;
-	newAmount: string;
-	description: string;
-	boxShadow?: boolean;
+  id: string | number;
+  image: string;
+  oldAmount?: string;
+  newAmount: string;
+  description: string;
+  boxShadow?: boolean;
 }
 
 const ProductCard2 = ({
-	id,
-	image,
-	oldAmount,
-	newAmount,
-	description,
-	boxShadow,
+  id,
+  image,
+  oldAmount,
+  newAmount,
+  description,
+  boxShadow,
 }: ProductCard2Props) => {
-	const router = useRouter();
-	const { addItem, removeItem, updateItem, getItem } = useCart();
-	const [count, setCount] = useState(0);
-	const ID = id.toString();
-	const cartItem = getItem(ID);
-	const cartItemCount = cartItem ? cartItem.quantity : 0;
-	const NewAmount = parseInt(newAmount);
-	// const OldAmount = parseInt(oldAmount)
-	// const handleClick = () => {
-	// 	router.push(`/home-item/product/${description}-${id}`);
-	// };
+  const router = useRouter();
+  const { addItem, removeItem, updateItem, getItem } = useCart();
+  const [count, setCount] = useState(0);
+  const ID = id.toString();
+  const cartItem = getItem(ID);
+  const cartItemCount = cartItem ? cartItem.quantity : 0;
+  const NewAmount = parseInt(newAmount);
+  const slugDesc = convertToSlug(description);
 
-	const handleCartClick = (e: React.MouseEvent) => {
-		e.stopPropagation();
-		setCount(count + 1);
-		// Adding the first product from the `products` array to the cart
-		addItem({
-			id: ID,
-			name: description,
-			price: NewAmount,
-			quantity: count,
-			image: image,
-		});
-	};
+  const handleCartClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setCount(count + 1);
+    addItem({
+      id: ID,
+      name: description,
+      price: NewAmount,
+      quantity: count,
+      image: image,
+    });
+  };
 
-	const handleMinusCartClick = (e: React.MouseEvent) => {
-		e.stopPropagation(); // Prevents the event from propagating further
+  const handleMinusCartClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const newCount = Math.max(count - 1, 0);
+    if (newCount === 0) {
+      removeItem(ID);
+    } else {
+      updateItem(ID, { quantity: newCount });
+    }
+    setCount(newCount);
+  };
 
-		const newCount = Math.max(count - 1, 0);
+  const handlePlusCartClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const newCount = count + 1;
+    addItem({
+      id: ID,
+      name: description,
+      price: NewAmount,
+      quantity: newCount,
+      image: image,
+    });
+    setCount(newCount);
+  };
 
-		if (newCount === 0) {
-			// If count becomes 0, remove the item from the cart
-			removeItem(ID);
-		} else {
-			// Update the cart item with the new quantity
-			updateItem(ID, {
-				quantity: newCount,
-			});
-		}
+  return (
+    <div
+      className={`flex flex-col bg-gray1-300 gap-2 justify-between w-full h-full max-w-[200px] sm:max-w-[250px] cursor-pointer rounded-sm ${
+        boxShadow ? "shadow-lg bg-white" : "border-[1px] border-[#bfbfbf4f]"
+      } hover:shadow-lg transition-all duration-300`}>
+      {/* Image Container */}
+      <div className="relative w-full pt-[100%] overflow-hidden rounded-t-sm">
+        <Link
+          href={`/home-item/product/${slugDesc}-${id}`}
+          className="absolute inset-0">
+          <Picture
+            src={image || ""}
+            alt={`${description}-image`}
+            className="w-full h-full object-contain object-center"
+            loading="eager"
+          />
+        </Link>
+      </div>
 
-		setCount(newCount);
-	};
+      {/* Product Info */}
+      <div className="flex flex-col px-1 gap-2">
+        <div className="flex items-center justify-between w-full">
+          <h4 className="text-xs sm:text-sm text-primary font-medium">
+            {NewAmount ? <FormatMoney2 value={NewAmount} /> : "Out of Stock"}
+          </h4>
+          <div
+            className={`flex items-center gap-1 rounded-md text-white p-1 text-xs sm:text-sm transition ${
+              cartItemCount !== 0 ? "bg-primary" : ""
+            }`}>
+            {cartItemCount === 0 ? (
+              <RiShoppingBagFill
+                className="fill-primary text-xl sm:text-2xl"
+                onClick={handleCartClick}
+              />
+            ) : (
+              <>
+                <AiOutlineMinus
+                  onClick={handleMinusCartClick}
+                  className="text-xs sm:text-sm"
+                />
+                <span>{cartItemCount}</span>
+                <AiOutlinePlus
+                  onClick={handlePlusCartClick}
+                  className="text-xs sm:text-sm"
+                />
+              </>
+            )}
+          </div>
+        </div>
 
-	const handlePlusCartClick = (e: React.MouseEvent) => {
-		e.stopPropagation(); // Prevents the event from propagating further
-
-		const newCount = count + 1;
-
-		// Adding the product to the cart with the updated quantity
-		addItem({
-			id: ID,
-			name: description,
-			price: NewAmount,
-			quantity: newCount,
-			image: image,
-		});
-
-		setCount(newCount);
-	};
-
-	const slugDesc = convertToSlug(description);
-
-	return (
-		<div
-			className={`flex flex-col gap-2 justify-center items-center min-w-[150px] md:min-w-[180px] slg:min-w-[180px] slg:max-w-[180px] h-[200px] sm:h-[230px] slg:h-[260px] cursor-pointer rounded-sm ${
-				boxShadow ? "shadow-lg bg-white" : "border-[1px] border-[#bfbfbf4f]"
-			} hover:shadow-lg hover:scale-105 transition`}
-		>
-			<div className='flex-[.8] w-full relative flex items-center justify-center overflow-hidden rounded-t-sm'>
-				<Link href={`/home-item/product/${slugDesc}-${id}`} className='w-full'>
-					<Picture
-						src={image || ""}
-						alt={`${description}-image`}
-						className='absolute top-0 object-contain object-center h-full w-full'
-						loading='eager'
-					/>
-				</Link>
-			</div>
-			<div className='flex-[.2] flex w-full flex-col px-2 pb-1'>
-				<div className='flex items-center justify-between'>
-					<h4 className='text-xs sm:text-base text-primary font-[400] leading-[1.8]'>
-						{NewAmount ? <FormatMoney2 value={NewAmount} /> : "Out of Stock"}
-					</h4>
-					<div
-						className={`flex items-center gap-1 rounded-md text-white p-1 text-xs sm:text-sm transition ${
-							cartItemCount !== 0 && "bg-primary"
-						}`}
-					>
-						{cartItemCount === 0 ? (
-							<RiShoppingBagFill
-								className='fill-primary text-2xl'
-								onClick={handleCartClick}
-							/>
-						) : (
-							<>
-								<AiOutlineMinus onClick={handleMinusCartClick} />
-								<span className=''>{cartItemCount}</span>
-								<AiOutlinePlus onClick={handlePlusCartClick} />
-							</>
-						)}
-					</div>
-				</div>
-
-				<Link
-					href={`/home-item/product/${slugDesc}-${id}`}
-					dangerouslySetInnerHTML={{ __html: description }}
-					className='line-clamp-2 text-xs sm:text-sm text-text_color font-semibold leading-[1.3] w-[8rem]'
-				/>
-			</div>
-		</div>
-	);
+        <Link
+          href={`/home-item/product/${slugDesc}-${id}`}
+          dangerouslySetInnerHTML={{ __html: description }}
+          className="line-clamp-2 text-xs sm:text-sm text-text_color font-semibold leading-snug"
+        />
+      </div>
+    </div>
+  );
 };
 
 export default ProductCard2;

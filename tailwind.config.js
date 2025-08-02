@@ -14,18 +14,19 @@ export const theme = {
     colors: {
       light: "#F3F3F3",
       background: "#F3F3F3",
-      gray: {
+      gray1: {
         100: "#FDF7FD",
         200: "#CCCCCC",
+        300: "#E4E3E3",
+        400: "#D1D1D1",
       },
-      primary: "#28CB6D",
+      primary: "#1074FD",
       effect: "#E2C8C4",
       primaryColor: {
-        100: "#9BCB14",
+        100: "#000C2F",
         200: "#6ACB0F",
         300: "#69A34E",
         400: "#41A92B",
-        500: "#000C2F",
       },
 
       dark: "#231834",
@@ -42,6 +43,8 @@ export const theme = {
       orange: "#FB5646",
       btnColor: {
         100: "#1074FD",
+        200: "#FFFFFF0D",
+        300: "#21212133",
       },
     },
     animation: {
