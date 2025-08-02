@@ -23,14 +23,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <AppLayout>
-      <div className="relative flex items-center justify-center h-screen ">
-        <Picture
-          src={homepageBg}
-          alt="hero-image"
-          className="h-full md:w-full absolute object-cover w-screen top-0"
-        />
-        {/* Optional: overlay */}
-
+      <div className="pt-24 md:py-32 mb-20 flex items-center justify-center px-3 md:px-0">
         <RegisterForm />
       </div>
     </AppLayout>

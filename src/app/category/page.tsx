@@ -11,16 +11,8 @@ import React from "react";
 const page = () => {
   return (
     <AppLayout>
-      <div className="relative flex items-center justify-center h-full ">
-        <Picture
-          src={homepageBg}
-          alt="hero-image"
-          className="h-full md:w-full absolute object-cover w-screen top-0"
-        />
-        {/* Optional: overlay */}
-        <div className="flex flex-col slg:flex-row gap-4 w-full mt-40 slg:mt-44 px-2 sm:px-6 mx-auto z-20">
-          <MainCategoryContent />
-        </div>
+      <div className="flex flex-col slg:flex-row gap-4 w-full pt-40 slg:pt-44 px-2 sm:px-6 mx-auto z-20">
+        <MainCategoryContent />
       </div>
     </AppLayout>
   );

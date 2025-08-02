@@ -121,7 +121,7 @@ const Footer = () => {
   const staggerDelay = 0.2;
 
   return (
-    <footer className="bg-gray1-400 w-full py-2 flex flex-col item-center ">
+    <footer className="bg-primaryColor-100 w-full py-2 flex flex-col item-center ">
       <div className="mx-auto max-w-[1400px] w-full hidden slg:block">
         <section className="flex justify-center gap-16 mt-2">
           <div className="flex flex-col gap-4 w-[80%]">
@@ -149,7 +149,7 @@ const Footer = () => {
           <div className="flex gap-4 w-full pt-3">
             {footerData.map((section, index) => (
               <div key={index} className="flex flex-col gap-4 lg:gap-5 w-full">
-                <span className="text-secondary-400 font-[500] text-base leading-[1.6]">
+                <span className="text-white font-[500] text-base leading-[1.6]">
                   {section.title}
                 </span>
                 {section.links.map((link, linkIndex) => (
@@ -200,7 +200,7 @@ const Footer = () => {
           <div className="flex lg:gap-8 w-full pt-3">
             {footerData.map((section, index) => (
               <div key={index} className="flex flex-col gap-2 sm:gap-5 w-full">
-                <span className="text-secondary-400 font-[500] text-sm sm:text-base leading-[1.6]">
+                <span className="text-white font-[500] text-sm sm:text-base leading-[1.6]">
                   {section.title}
                 </span>
 

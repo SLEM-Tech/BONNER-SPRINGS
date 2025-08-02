@@ -24,14 +24,7 @@ const page = () => {
   return (
     <AppLayout>
       {/* Background image */}
-      <div className="relative flex items-center  justify-center h-screen text-white ">
-        <Picture
-          src={homepageBg}
-          alt="hero-image"
-          className="h-full md:w-full absolute object-cover w-screen top-0"
-        />
-        {/* Optional: overlay */}
-
+      <div className="pt-40 md:py-48 mb-20 flex items-center justify-center px-3 md:px-0">
         <LoginForm />
       </div>
 

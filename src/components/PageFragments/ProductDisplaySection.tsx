@@ -83,7 +83,7 @@ const ProductDisplaySection = ({ FormatedId }: ProductDisplaySectionProps) => {
 
   return (
     <>
-      <section className="px-2 sm:px-4 md:px-5 lg:px-8 xl:px-0 mt-3">
+      <section className="px-2 sm:px-4 md:px-5 lg:px-8 xl:px-0 mt-3 overflow-hidden">
         {Product && (
           <>
             <div className="bg-white flex flex-col lg:flex-row w-full py-4 sm:py-5 lg:py-8 gap-6 sm:gap-8 px-3 ">
