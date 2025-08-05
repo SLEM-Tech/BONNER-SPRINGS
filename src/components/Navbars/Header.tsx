@@ -212,7 +212,7 @@ const Header = () => {
         }`}>
         {/* Desktop */}
         <div className="hidden slg:grid grid-cols-4 items-center w-full py-1 max-w-[1200px] z-30 px-5 xl:px-0 ">
-          <LogoImage className="w-[100px] lg:w-[120px] col-span-1" />
+          <LogoImage className=" col-span-1" />
 
           <div className="flex justify-center h-10 col-span-2">
             <input
@@ -369,13 +369,13 @@ const Header = () => {
 
         {/* Mobile */}
         <div className="flex flex-col items-center w-full slg:hidden text-white px-2 xs:px-4">
-          <div className="flex items-center w-full justify-between">
-            <div className="flex items-center gap-1">
+          <div className="flex items-center w-full justify-between py-4">
+            <div className="flex items-center gap-2">
               <GiHamburgerMenu
                 onClick={handleNavMenuClick}
                 className="text-3xl text-white hover:scale-105 transition-[.5]"
               />
-              <LogoImage className="rounded-sm !w-[120px] " />
+              <LogoImage className="" />
             </div>
 
             <div className="flex gap-4 justify-center items-center cursor-pointer">

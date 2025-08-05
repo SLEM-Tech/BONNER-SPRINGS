@@ -27,8 +27,6 @@ const page = () => {
       <div className="pt-40 md:py-48 mb-20 flex items-center justify-center px-3 md:px-0">
         <LoginForm />
       </div>
-
-      {/* Form section */}
     </AppLayout>
   );
 };

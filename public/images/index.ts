@@ -16,7 +16,7 @@ import computerOfficeResponsive2 from "./computer-office-responsive-image.png";
 import officeImg1 from "./office-img.png";
 import confetti from "./confetti.png";
 import banner from "./banner.png";
-import logoImage from "./duply-logo.png";
+import logoImage from "./BONNERSPRINGS-removebg-preview 1.png";
 import homepageBg from "./homepageBg.png";
 import herosectionImg from "./Mockup 2.png";
 import service1 from "./service1.png";
