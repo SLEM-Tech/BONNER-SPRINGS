@@ -9,7 +9,7 @@ interface LogoImageProps {
 
 export const LogoImage = ({ className }: LogoImageProps) => {
   return (
-    <Link href="/" className="size-8">
+    <Link href="/" className="size-8 flex items-center flex-col justify-center">
       <Picture
         src={logoImage}
         alt="logo"
