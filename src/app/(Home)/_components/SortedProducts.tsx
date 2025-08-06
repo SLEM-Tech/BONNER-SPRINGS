@@ -133,7 +133,7 @@ const SortedProducts = () => {
       <div className="space-y-5 md:space-y-10 container mx-auto">
         {categories
           ?.filter((category: CategoryType) => category?.count > 0)
-          ?.slice(0, 5)
+          ?.slice(0, 2)
           ?.map((category: CategoryType) => (
             <div key={category?.id} className="space-y-4">
               <div className="w-full items-center flex justify-between sm:px-2">

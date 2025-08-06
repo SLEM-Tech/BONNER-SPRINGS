@@ -24,11 +24,11 @@ const page = () => {
   return (
     <AppLayout>
       <div className="relative flex items-center justify-center h-full w-full  ">
-        <Picture
+        {/* <Picture
           src={homepageBg}
           alt="hero-image"
           className="h-full md:w-full absolute object-cover w-screen top-0"
-        />
+        /> */}
         <div className="px-2 sm:px-6  w-screen z-20">
           <Dashboard />
         </div>

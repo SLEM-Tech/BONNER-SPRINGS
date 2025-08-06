@@ -24,17 +24,9 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <AppLayout>
-      <div className="relative flex items-center  justify-center h-screen ">
-        <Picture
-          src={homepageBg}
-          alt="hero-image"
-          className="h-full md:w-full absolute object-cover w-screen top-0"
-        />
-        {/* Optional: overlay */}
-        <main className="mt-40 md:my-48 mb-20 flex items-center justify-center px-3 md:px-0 z-20">
-          <ForgotPasswordForm />
-        </main>
-      </div>
+      <main className="pt-40 md:py-48 mb-20 flex items-center justify-center px-3 md:px-0">
+        <ForgotPasswordForm />
+      </main>
     </AppLayout>
   );
 };

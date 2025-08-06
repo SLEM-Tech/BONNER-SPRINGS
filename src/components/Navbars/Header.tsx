@@ -205,14 +205,14 @@ const Header = () => {
   return (
     <>
       <header
-        className={`flex slg:flex-col w-full justify-center items-center  z-50 transition drop-shadow-md fixed top-0 ${
+        className={`flex slg:flex-col w-full justify-center items-center text-white z-50 transition drop-shadow-md fixed top-0 ${
           navbar
             ? "bg-primaryColor-100/50 backdrop-blur-lg shadow-xl"
             : "bg-custom-gradient"
         }`}>
         {/* Desktop */}
         <div className="hidden slg:grid grid-cols-4 items-center w-full py-1 max-w-[1200px] z-30 px-5 xl:px-0 ">
-          <LogoImage className="w-[100px] lg:w-[120px] col-span-1" />
+          <LogoImage className=" col-span-1" />
 
           <div className="flex justify-center h-10 col-span-2">
             <input
@@ -306,7 +306,7 @@ const Header = () => {
                 ) : (
                   <div className="flex flex-col">
                     <span
-                      className="cursor-pointer hover:text-primaryColor-200 transition"
+                      className="cursor-pointer hover:text-primaryColor-200 transition text-white"
                       onClick={() => router.push("/user/login")}>
                       Log In
                     </span>
@@ -356,7 +356,7 @@ const Header = () => {
                     <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white shadow-lg flex justify-center items-center rounded-full">
                       {totalItems}
                     </span>
-                    <CartIconSvg />
+                    <CartIconSvg className="fill-white" />
                   </div>
                 )}
                 <span className="truncate text-sm font-semibold w-16 overflow-hidden">
@@ -368,14 +368,14 @@ const Header = () => {
         </div>
 
         {/* Mobile */}
-        <div className="flex flex-col items-center w-full slg:hidden px-2 xs:px-4">
-          <div className="flex items-center w-full justify-between">
-            <div className="flex items-center gap-1">
+        <div className="flex flex-col items-center w-full slg:hidden text-white px-2 xs:px-4">
+          <div className="flex items-center w-full justify-between py-4">
+            <div className="flex items-center gap-2">
               <GiHamburgerMenu
                 onClick={handleNavMenuClick}
-                className="text-3xl text-primary hover:scale-105 transition-[.5]"
+                className="text-3xl text-white hover:scale-105 transition-[.5]"
               />
-              <LogoImage className="rounded-sm !w-[120px] " />
+              <LogoImage className="" />
             </div>
 
             <div className="flex gap-4 justify-center items-center cursor-pointer">
@@ -428,7 +428,7 @@ const Header = () => {
                       </span>
                     )}
 
-                    <SlArrowDown className="text-primary text-sm group-hover:text-primary group-hover:translate-y-[2px] transition duration-400 ease-out" />
+                    <SlArrowDown className="text-white text-sm group-hover:text-primary group-hover:translate-y-[2px] transition duration-400 ease-out" />
                     <AnimatePresence>
                       {isUserClick && (
                         <motion.nav
@@ -445,8 +445,8 @@ const Header = () => {
                                 href={item.href}
                                 className={`${
                                   pathname === item.href
-                                    ? "text-primary"
-                                    : "text-black"
+                                    ? "text-white/80"
+                                    : "text-white"
                                 } hover:text-primary`}>
                                 {item.label}
                               </Link>
@@ -454,7 +454,7 @@ const Header = () => {
                           ))}
                           <span
                             onClick={() => signOut()}
-                            className="text-center text-xs pt-1 pb-2 text-gray-500 hover:text-primary border-t">
+                            className="text-center text-xs pt-1 pb-2 text-white hover:text-primary border-t">
                             Log Out
                           </span>
                         </motion.nav>
@@ -464,7 +464,7 @@ const Header = () => {
                 ) : (
                   <UserIconSvg
                     onClick={() => router.push("/user/login")}
-                    className="w-6 h-6"
+                    className="w-6 h-6 fill-white"
                   />
                 )}
               </div>
@@ -480,7 +480,7 @@ const Header = () => {
               )}
             </div>
           </div>
-          {/* <div className="flex w-full h-10 px-1 pb-2">
+          <div className="flex w-full h-10 px-1 pb-2">
             <input
               type="text"
               placeholder="I'm looking for..."
@@ -508,7 +508,7 @@ const Header = () => {
                 <FaSearch />
               </button>
             )}
-          </div> */}
+          </div>
           {drawerVisible && (
             <MobileNav
               closeDrawer={closeDrawer}

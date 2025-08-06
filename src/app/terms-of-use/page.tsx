@@ -29,7 +29,7 @@ const Page = () => {
 
   return (
     <AppLayout>
-      <main className="bg-primaryColor-100 mx-auto mt-32 pb-24">
+      <main className="bg-primaryColor-100 mx-auto pt-32 pb-24">
         <section className="flex w-full flex-col items-center pt-8 xl:pt-16 gap-2 sm:gap-3 px-2 sm:px-8 md:px-16 text-center">
           <h4 className="text-white text-base sm:text-xl font-semibold leading-[120%]">
             Our Policies

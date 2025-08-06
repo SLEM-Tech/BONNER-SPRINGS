@@ -28,7 +28,7 @@ const ContactCard = ({
         ) : type === "tel" ? (
           <>
             <a
-              className="text-primary text-xs slg:text-sm xl:text-base hover:underline cursor-pointer"
+              className="text-white text-xs slg:text-sm xl:text-base hover:underline cursor-pointer"
               href={`tel:${additionalText}`}>
               {additionalText}
             </a>{" "}
@@ -36,7 +36,7 @@ const ContactCard = ({
         ) : type === "email" ? (
           <>
             <a
-              className="text-primary text-xs slg:text-sm xl:text-base hover:underline cursor-pointer"
+              className="text-white text-xs slg:text-sm xl:text-base hover:underline cursor-pointer"
               href={`mailto:${additionalText}`}>
               {additionalText}
             </a>{" "}

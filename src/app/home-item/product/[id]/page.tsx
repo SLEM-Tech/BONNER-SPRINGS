@@ -52,17 +52,9 @@ const page = async ({ params: { id } }: ProductIdProps) => {
 
   return (
     <AppLayout>
-      <div className="relative flex items-center justify-center h-full overflow-hidden">
-        <Picture
-          src={homepageBg}
-          alt="hero-image"
-          className="h-full md:w-full absolute object-cover w-screen top-0"
-        />
-        <div className="pt-40 slg:pt-44 mx-auto max-w-[1156px] z-20 h-full">
-          <Back />
-          <ProductDisplaySection FormatedId={formatedId} />
-        </div>
-        {/* Optional: overlay */}
+      <div className="pt-40 slg:pt-44 mx-auto max-w-[1156px] z-20 h-full relative overflow-hidden">
+        <Back />
+        <ProductDisplaySection FormatedId={formatedId} />
       </div>
     </AppLayout>
   );
