@@ -16,27 +16,27 @@ export const loadingBarRef = React.createRef<LoadingBarRef | null>();
 const queryClient = new QueryClient();
 
 interface AppProviderProps {
-	children: ReactNode;
+  children: ReactNode;
 }
 
 const AppProvider = ({ children }: AppProviderProps) => {
-	return (
-		<>
-			<QueryClientProvider client={queryClient}>
-				<LoadingBar
-					color='#28CB6D'
-					ref={loadingBarRef as React.RefObject<LoadingBarRef>}
-					height={5}
-				/>
-				<ToastContainer />
-				<CartProvider>
-					<NextUIProvider>
-						<Provider store={newStore}>{children}</Provider>
-					</NextUIProvider>
-				</CartProvider>
-			</QueryClientProvider>
-		</>
-	);
+  return (
+    <>
+      <QueryClientProvider client={queryClient}>
+        <LoadingBar
+          color="#233250"
+          ref={loadingBarRef as React.RefObject<LoadingBarRef>}
+          height={5}
+        />
+        <ToastContainer />
+        <CartProvider>
+          <NextUIProvider>
+            <Provider store={newStore}>{children}</Provider>
+          </NextUIProvider>
+        </CartProvider>
+      </QueryClientProvider>
+    </>
+  );
 };
 
 export default AppProvider;
