@@ -11,7 +11,7 @@ import React from "react";
 const page = () => {
   return (
     <AppLayout>
-      <div className="flex flex-col slg:flex-row gap-4 w-full pt-40 slg:pt-44 px-2 sm:px-6 mx-auto z-20">
+      <div className="flex flex-col slg:flex-row gap-4 w-full pt-16 px-2 sm:px-6 mx-auto z-20">
         <MainCategoryContent />
       </div>
     </AppLayout>
