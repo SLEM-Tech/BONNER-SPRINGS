@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <AppLayout>
-      <div className="pt-24 md:py-32 mb-20 flex items-center justify-center px-3 md:px-0">
+      <div className="pt-10 mb-20 flex items-center justify-center px-3 md:px-0">
         <RegisterForm />
       </div>
     </AppLayout>

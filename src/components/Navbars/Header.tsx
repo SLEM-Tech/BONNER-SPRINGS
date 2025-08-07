@@ -205,7 +205,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`flex slg:flex-col w-full justify-center items-center text-white z-50 transition drop-shadow-md fixed top-0 ${
+        className={`flex slg:flex-col w-full justify-center pt-2 items-center text-white z-50 transition drop-shadow-md fixed top-0 ${
           navbar
             ? "bg-primaryColor-100/50 backdrop-blur-lg shadow-xl"
             : "bg-custom-gradient"

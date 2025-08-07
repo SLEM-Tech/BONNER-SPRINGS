@@ -7,7 +7,7 @@ import { homepageBg } from "@public/images";
 const Page = () => {
   return (
     <AppLayout>
-      <main className="flex flex-col xl:flex-row gap-4 w-full px-3 xl:px-6 max-w-[1440px] mx-auto mt-40 slg:mt-40 mb-16 md:mb-64 z-20">
+      <main className="flex flex-col xl:flex-row gap-4 w-full px-3 xl:px-6 max-w-[1440px] mx-auto pt-44 mb-16 md:mb-64 z-20">
         <div className="flex-1">
           <ShoopingCartReview />
         </div>

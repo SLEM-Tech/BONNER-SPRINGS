@@ -31,7 +31,7 @@ const ProductPageBottomHeader = () => {
   const extractedText = capitalizeFirstLetter(formattedLastWord);
 
   return (
-    <nav className="hidden slg:flex gap-24 justify-center items-center w-full py-4 bg-primaryColor-100 px-32">
+    <nav className="hidden slg:flex gap-24 justify-center items-center w-full py-4  px-32">
       <div className="flex w-full max-w-[1156px] gap-2 text-sm capitalize leading-[1.4] px-36">
         <Link
           href="/"

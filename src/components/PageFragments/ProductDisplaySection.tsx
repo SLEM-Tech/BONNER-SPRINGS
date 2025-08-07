@@ -177,7 +177,7 @@ const ProductDisplaySection = ({ FormatedId }: ProductDisplaySectionProps) => {
                         Buy Now
                       </button>
                     )}
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
+                    <div className="flex items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
                       <span className="text-xs sm:text-sm text-gray-500">
                         Share:
                       </span>

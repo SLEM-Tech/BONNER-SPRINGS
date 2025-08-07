@@ -24,7 +24,7 @@ const ProductCard2 = ({
   oldAmount,
   newAmount,
   description,
-  boxShadow,
+  boxShadow = true,
 }: ProductCard2Props) => {
   const router = useRouter();
   const { addItem, removeItem, updateItem, getItem } = useCart();
@@ -32,90 +32,110 @@ const ProductCard2 = ({
   const ID = id.toString();
   const cartItem = getItem(ID);
   const cartItemCount = cartItem ? cartItem.quantity : 0;
-  const NewAmount = parseInt(newAmount);
+  const parsedNewAmount = parseFloat(newAmount) || 0;
   const slugDesc = convertToSlug(description);
 
   const handleCartClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCount(count + 1);
+    const newCount = count + 1;
+    setCount(newCount);
     addItem({
       id: ID,
       name: description,
-      price: NewAmount,
-      quantity: count,
-      image: image,
+      price: parsedNewAmount,
+      quantity: newCount,
+      image,
     });
   };
 
   const handleMinusCartClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     const newCount = Math.max(count - 1, 0);
+    setCount(newCount);
     if (newCount === 0) {
       removeItem(ID);
     } else {
       updateItem(ID, { quantity: newCount });
     }
-    setCount(newCount);
   };
 
   const handlePlusCartClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     const newCount = count + 1;
+    setCount(newCount);
     addItem({
       id: ID,
       name: description,
-      price: NewAmount,
+      price: parsedNewAmount,
       quantity: newCount,
-      image: image,
+      image,
     });
-    setCount(newCount);
   };
 
   return (
     <div
-      className={`flex flex-col bg-gray1-300 gap-2 justify-between w-full h-full max-w-[200px] sm:max-w-[250px] cursor-pointer rounded-sm ${
-        boxShadow ? "shadow-lg bg-white" : "border-[1px] border-[#bfbfbf4f]"
-      } hover:shadow-lg transition-all duration-300`}>
+      className={`flex flex-col bg-white gap-4 justify-between min-w-[180px] max-w-[200px] sm:min-w-[240px] sm:max-w-[260px] min-h-[340px] sm:min-h-[400px] rounded-xl overflow-hidden transition-all duration-500 ${
+        boxShadow ? "shadow-lg hover:shadow-2xl" : "border border-gray-200"
+      } hover:-translate-y-2 focus-within:ring-4 focus-within:ring-primary/20`}
+      role="region"
+      aria-label={`Product card for ${description}`}>
       {/* Image Container */}
-      <div className="relative w-full pt-[100%] overflow-hidden rounded-t-sm">
-        <Link
-          href={`/home-item/product/${slugDesc}-${id}`}
-          className="absolute inset-0">
-          <Picture
-            src={image || ""}
-            alt={`${description}-image`}
-            className="w-full h-full object-contain object-center"
-            loading="eager"
-          />
-        </Link>
-      </div>
+      <Link
+        href={`/home-item/product/${slugDesc}-${id}`}
+        className="relative w-full pt-[100%] bg-gray-50"
+        aria-label={`View details for ${description}`}>
+        <Picture
+          src={image || "/placeholder-image.jpg"}
+          alt={`${description}`}
+          className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 hover:scale-110"
+          loading="eager"
+        />
+      </Link>
 
       {/* Product Info */}
-      <div className="flex flex-col px-1 gap-2">
-        <div className="flex items-center justify-between w-full">
-          <h4 className="text-xs sm:text-sm text-primary font-medium">
-            {NewAmount ? <FormatMoney2 value={NewAmount} /> : "Out of Stock"}
-          </h4>
+      <div className="flex flex-col px-4 pb-4 gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div className="flex flex-col">
+            <h4 className="text-base sm:text-lg font-bold text-primary">
+              {parsedNewAmount ? (
+                <FormatMoney2 value={parsedNewAmount} />
+              ) : (
+                <span className="text-red-600 font-medium">Out of Stock</span>
+              )}
+            </h4>
+            {oldAmount && parsedNewAmount < parseFloat(oldAmount) && (
+              <span className="line-through text-sm text-gray-400">
+                <FormatMoney2 value={parseFloat(oldAmount)} />
+              </span>
+            )}
+          </div>
           <div
-            className={`flex items-center gap-1 rounded-md text-white p-1 text-xs sm:text-sm transition ${
-              cartItemCount !== 0 ? "bg-primary" : ""
-            }`}>
+            className={`flex items-center justify-center gap-3 rounded-full px-3 py-2 transition-colors ${
+              cartItemCount > 0 ? "bg-primary text-white" : "bg-gray-100"
+            } hover:bg-primary/90 w-full sm:w-auto`}
+            role="button"
+            aria-label={cartItemCount > 0 ? "Adjust quantity" : "Add to cart"}>
             {cartItemCount === 0 ? (
               <RiShoppingBagFill
-                className="fill-primary text-xl sm:text-2xl"
+                className="text-2xl text-primary"
                 onClick={handleCartClick}
+                aria-label="Add to cart"
               />
             ) : (
               <>
-                <AiOutlineMinus
+                <button
                   onClick={handleMinusCartClick}
-                  className="text-xs sm:text-sm"
-                />
-                <span>{cartItemCount}</span>
-                <AiOutlinePlus
+                  className="text-base focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                  aria-label="Decrease quantity">
+                  <AiOutlineMinus />
+                </button>
+                <span className="text-base font-semibold">{cartItemCount}</span>
+                <button
                   onClick={handlePlusCartClick}
-                  className="text-xs sm:text-sm"
-                />
+                  className="text-base focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                  aria-label="Increase quantity">
+                  <AiOutlinePlus />
+                </button>
               </>
             )}
           </div>
@@ -123,8 +143,9 @@ const ProductCard2 = ({
 
         <Link
           href={`/home-item/product/${slugDesc}-${id}`}
+          className="text-base text-gray-800 font-semibold line-clamp-2 hover:text-primary transition-colors duration-300"
           dangerouslySetInnerHTML={{ __html: description }}
-          className="line-clamp-2 text-xs sm:text-sm text-text_color font-semibold leading-snug"
+          aria-label={`View details for ${description}`}
         />
       </div>
     </div>

@@ -7,7 +7,7 @@ const Page = () => {
 
   return (
     <AppLayout>
-      <main className="pt-40 md:pt-44 flex items-center justify-center px-3 sm:px-8 md:px-0">
+      <main className="pt-24 flex items-center justify-center px-3 sm:px-8 md:px-0">
         <div className="flex flex-col items-center justify-center text-center bg-white w-full md:w-[32rem] py-8 md:py-16 px-2 shadow-lg rounded-xl gap-2 md:gap-5">
           <h3 className="text-xs sm:text-base md:text-3xl text-primary text-center">
             Your password changed successfully, you can login now!
