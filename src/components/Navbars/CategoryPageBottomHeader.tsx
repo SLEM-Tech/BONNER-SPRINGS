@@ -32,15 +32,15 @@ const CategoryPageBottomHeader = () => {
   return (
     <nav
       className={
-        "hidden slg:flex gap-24 justify-center items-center w-full py-4 px-32"
+        "hidden slg:flex gap-24 justify-center items-center w-full py-4"
       }>
-      <div className="flex w-full max-w-[1156px] gap-2 text-sm capitalize leading-[1.4] px-36">
+      <div className="flex w-full max-w-[1200px] gap-2 text-sm capitalize leading-[1.4] ">
         <h4
           className="text-white font-[400] cursor-pointer hover:text-primaryColor-100"
           onClick={() => router.push("/")}>
           Home
         </h4>
-        <span className="text-black">&gt;</span>
+        <span className="text-white">&gt;</span>
         <h4 className="font-semibold text-secondary-300">
           All Category &gt; {formattedLastWord}
         </h4>

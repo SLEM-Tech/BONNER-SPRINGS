@@ -19,8 +19,8 @@ const Page = () => {
   const ProductsTotal = Products?.length;
 
   return (
-    <AppLayout className="pt-14">
-      <main className="bg-white flex flex-col items-center relative justify-center w-full pt-10 mt-40 slg:mt-44 xl:pt-5 mx-auto max-w-[1156px] min-h-[50vh] mb-20 px-4 lg:px-2">
+    <AppLayout className="pt-5">
+      <main className="bg-white flex flex-col items-center relative justify-center w-full pt-10 mt-40 slg:mt-44 xl:pt-5 mx-auto max-w-[1350px] min-h-[50vh] mb-20 px-4 lg:px-2">
         {ProductsTotal === 0 ? (
           <div className="">
             <h3 className="text-2xl text-center tracking-tight text-secondary-200">
@@ -37,7 +37,7 @@ const Page = () => {
             <SearchDataOutput data={Products} isloading={ProductWpIsLoading} />
           </>
         )}
-        {ProductWpIsLoading && <ScaleLoader color="#28CB6D" />}
+        {ProductWpIsLoading && <ScaleLoader color="#233250 " />}
       </main>
     </AppLayout>
   );

@@ -63,9 +63,9 @@ const MainCategorySection = () => {
       {CategoryProducts && (
         <>
           {CategoryProducts?.length > 0 && (
-            <div className="w-full px-2 pl-8">
+            <div className="w-full px-2 md:pl-7 pl-1">
               <Back />
-              <div className="flex gap-2 items-center text-2xl font-medium tracking-tight text-white">
+              <div className="flex gap-2 mt-2 items-center text-2xl font-medium tracking-tight text-white">
                 <h4
                   dangerouslySetInnerHTML={{
                     __html: CategoryProducts[0]?.categories[0]?.name,
@@ -107,7 +107,7 @@ const MainCategorySection = () => {
       )}
       {categoryProductsWpIsLoading && (
         <div className="flex w-full justify-center mt-6">
-          <ScaleLoader color="#28CB6D" />
+          <ScaleLoader color="#233250 " />
         </div>
       )}
       {totalPages && totalPages > 1 && (
