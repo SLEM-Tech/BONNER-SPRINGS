@@ -396,7 +396,7 @@ const BonnerSpringsPolicies = () => {
               <ul className="list-disc pl-5 space-y-1 text-xs md:text-sm xl:text-base">
                 <li>Technical Support: support@bonnersprings.com.ng</li>
                 <li>Sales Inquiries: sales@bonnersprings.com.ng</li>
-                <li>Phone: +234-801-234-5001</li>
+                {/* <li>Phone: +234-801-234-5001</li> */}
                 <li>Website: www.bonnersprings.com.ng</li>
                 <li>
                   Business Hours: Monday - Friday, 8:00 AM - 6:00 PM (WAT)
