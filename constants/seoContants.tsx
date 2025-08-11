@@ -1,7 +1,7 @@
-const websiteUrl = "https://www.bonner-springs.com.ng/";
+const websiteUrl = "https://bonner-springs.vercel.app/";
 export const websiteName = "Bonner Springs";
 export const SEODATA = {
-  defaultOGImage: `https://www.bonner-springs.com.ng/_next/static/media/bonner-springs-logo.6c861d97.png`,
+  defaultOGImage: `https://bonner-springs.vercel.app/_next/static/media/BONNERSPRINGS-removebg-preview 1.829b61ea.png`,
   default: {
     title: websiteName,
     description: `This is ${websiteName}`,
