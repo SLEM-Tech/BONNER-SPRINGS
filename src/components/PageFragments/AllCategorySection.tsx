@@ -101,7 +101,7 @@ const AllCategorySection = () => {
                 Build Your Library with
               </h1>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-                Books You'll Love.
+                Books You&apos;ll Love.
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-white font-light">
                 From new releases to hidden gems,{" "}
