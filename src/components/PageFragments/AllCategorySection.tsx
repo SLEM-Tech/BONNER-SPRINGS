@@ -98,15 +98,15 @@ const AllCategorySection = () => {
           <div className="container mx-auto px-4 sm:px-6 py-12 flex flex-col md:flex-row gap-6 md:gap-8 items-center h-full z-10">
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white">
-                Power Up with the
+                Build Your Library with
               </h1>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-                Right Software.
+                Books You'll Love.
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-white font-light">
-                From creative tools to business essentials,{" "}
+                From new releases to hidden gems,{" "}
                 <br className="hidden sm:block" />
-                we&apos;ve got what you need
+                curated just for you
               </p>
             </div>
 
@@ -240,7 +240,7 @@ const AllCategorySection = () => {
               Explore more packages
             </h1>
             <p className="text-sm md:text-base font-light">
-              Lorem ipsum dolor sit amet consectetur. Ullamcorper vitae semper.
+              Your online destination for books across all genres.
             </p>
           </div>
           <Link
