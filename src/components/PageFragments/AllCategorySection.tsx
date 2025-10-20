@@ -164,7 +164,9 @@ const AllCategorySection = () => {
                     className="h-40 sm:h-48 md:h-56 bg-gray-100 rounded-lg animate-pulse"
                   />
                 ))
-              : categories?.slice(1, 5).map((category: any) => (
+              : categories?.slice(1, 5).map((category: any) => {
+                if(category.name === 'Uncategorized') return;
+                return (
                   <div
                     key={category.id}
                     className="group relative overflow-hidden rounded-lg h-40 sm:h-48 md:h-56">
@@ -189,7 +191,8 @@ const AllCategorySection = () => {
                       </div>
                     </Link>
                   </div>
-                ))}
+                )
+              })}
           </div>
 
           {/* Categories Carousel */}
